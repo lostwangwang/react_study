@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量</title>
+    <script>
+        /*
+        三种声明方式: const、let、var
+        第一优先使用的是const、如果希望变量被改变则使用let、至于var最好不要在代码中出现。
+        1. var: 没有块级作用域
+        2. let: 有块级作用域
+        3. const: 
+            - 和let类似，具有块级作用域，但是它只能赋值一次。
+            - 使用场景:
+                - 对于一些常量可以使用const
+                - 对于一些对象(函数)也可以使用const声明
+                    - 这样可以避免对象(函数)被意外修改
+        */
+        {
+            let a = 10;
+        }
+        for (var i = 0; i < 5; i++) {
+            console.log("循环内部--->", i);
+        }
+        console.log("循环外部--->", i);
+        if (true) {
+            var b = 33;
+        }
+        console.log("b----->", b);
+
+        const c = 44;
+
+        console.log("c==>", c);
+
+        const PI = 3.14
+        const obj = { "name": "孙悟空" }
+        obj.age = 18
+        console.log(obj)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

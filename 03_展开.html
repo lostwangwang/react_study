@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>展开</title>
+    <script>
+        // 函数当中展开
+        function fn(a, b, c) {
+            return a + b + c;
+        }
+        // 可以通过...来展开数组
+        const arr = [1, 2, 3];
+        let result = fn(...arr);
+        console.log(result);
+
+        const arr2 = [1, 2, 3, ...arr, 8, 9, 10]; // 相当于将arr浅复制给arr2
+        console.log("arr2=", arr2);
+        // 展开对象
+        const obj = {
+            name: "孙悟空",
+            age: 18,
+            gender: "男"
+        };
+        // 将obj在新的对象中展开，相当于浅复制
+        const obj2 = { ...obj, address: "花果山" };
+        console.log(obj2);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

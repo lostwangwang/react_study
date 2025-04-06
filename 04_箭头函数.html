@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        箭头函数： 
+            - 只有一个参数的函数
+                参数=>返回值
+            - 如果没有参数，或多个参数，参数需要使用()括起来
+                () => 返回值
+                (a, b, c) => 返回值
+            - 箭头后边的值就是函数的返回值
+                返回值必须是一个表达式(有值的语句)
+                如果返回值是对象，必须加()     
+            - 如果需要在箭头函数中定义逻辑，可以直接在箭头后面跟一个代码块
+                代码块中语法和普通函数没有区别。
+        */
+        const fn = function (a) {
+            return "hello world!";
+        };
+
+        const fn2 = a => "Hello";
+        console.log(fn2());
+
+        const fn3 = (a, b) => a + "hello";
+
+        const sum = (a, b) => a + b;
+        let result = sum(12, 34);
+        console.log(result);
+
+        const fn4 = (a, b) => {
+            if (a == 10) {
+                a += 5;
+            }
+            else if (a == 20) {
+                a += 10;
+            }
+            return a + b;
+        }
+
+        console.log("fn4=", fn4(10, 5));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模块化</title>
+    <!-- 
+    默认情况下，script标签中不能使用import语句
+    如果想让其支持模块化，必须设置script的type属性为module.
+    -->
+    <script type="module">
+        /**
+         * 所谓的模块化是指将一个大的项目拆分成一个一个小的模块。拆分模块的好处有很多，比如使代码变得结构清晰、易于维护、提高复用度等。
+         * es6的模块化分为两个部分: export(导出)和import(引入).
+        */
+        // 导入m1模块中的默认模块
+        import a from './m1.js'
+
+        // 导入m1模块中的b和c
+        import { b, c } from './m1.js'
+        console.log(a);
+        console.log("b, c", b, c);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
