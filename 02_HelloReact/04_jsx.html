@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- 引入babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<div id="root">
+
+</div>
+<!-- 设置js代码被babel处理  -->
+<script type="text/babel">
+
+    // 创建一个React元素 <button>我是按钮</button>
+    // 命令式编程
+    // const button = React.createElement('button', {}, '我是按钮');
+    // 声明式编程
+    // 在React中可以通过JSX(JS扩展)来创建React元素，JSX需要被翻译为JS代码，才能被React执行
+    // const button = <button>我是按钮</button>;
+
+    /**
+     * JSX就是React.createElement()的语法糖
+     *  JSX在执行之前都会被babel转换为js代码。
+     */
+    const div = <div>
+        我是一个div!!!
+        <button>我是按钮</button>
+    </div>
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(div);
+</script>
+
+<body>
+
+</body>
+
+</html>
