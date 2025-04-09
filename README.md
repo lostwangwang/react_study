@@ -4,5 +4,6 @@
 
 当前进度:
 
-- 01_JS 基础知识(已学完)
-- 02\_ Hello React
+- 01_JS 基础知识(已完成)
+- 02 Hello React(已完成)
+- 03 React Project(已完成)

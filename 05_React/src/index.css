@@ -1,0 +1,69 @@
+/* 设置基本样式 */
+* {
+    /*  */
+    box-sizing: border-box;
+}
+body {
+    background-color: #dfdfdf;
+    margin: 0;
+}
+
+/* 设置外层容器logs的样式 */
+.logs {
+    width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #d5bc2f;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, .2);
+}
+
+/* 设置item的样式 */
+.item {
+    /* 开启弹性盒 */
+    display: flex;
+    margin: 16px 0;
+    background-color: #fcbf49;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, .2);
+}
+
+.date {
+    width: 90px;
+    background-color: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+}
+
+.month {
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    font-size: 20px;
+    background-color: brown;
+}
+/* 设置日期的效果 */
+.day {
+    height: 60px;
+    line-height: 60px;
+    font-size: 50px;
+}
+
+/* 设置日志内容的样式 */
+.content {
+    flex: auto;
+    text-align: center;
+    /* background-color: #bfa; */
+}
+
+.desc {
+    font-size: 16px;
+    color: #194b49;
+}
+/* 设置学习时间 */
+.time {
+    color: red;
+    font: bold;
+}
