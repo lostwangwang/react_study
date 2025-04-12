@@ -2,9 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from './App'
 const Appp = () => {
-  return <div id="root">
-    <App />
-  </div>;
+  return (
+    <div id="root">
+      <App />
+    </div>
+  );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

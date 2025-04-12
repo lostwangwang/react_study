@@ -1,62 +1,46 @@
-import React from "react";
+import { useState } from 'react';
+import './App.css';
 const App = () => {
-  const clickHandler = (event) => {
-    alert("我是App中的clickHandler函数");
     /**
-     * 在React中，无法通过return false取消默认行为
-     * return false;
+     * 在React中，当组件渲染完毕后，再修改组件中的变量，不会使组件重新渲染
+     * 要使得组件可以收到变量的影响，必须在变量修改后对组件进行重新渲染。
+     * 这里我们需要一个特殊变量，当这个变量被修改时，组件会自动重新渲染
      * 
-     * 事件对象:
-     *  1. React事件中同样会传递事件对象，可以在响应函数中定义参数来接收事件对象。
-     *  2. React中的事件对象同样不是原生的事件对象，而是经过React包装后的事件对象。
-     *  3. 由于对象进行过包装，所以使用过程中我们无须再去考虑兼容性问题。
+     * 
+     * state 相当于一个变量,只是这个变量在React中进行注册
+     * React会监控这个变量的变化，当state发生变化时，会自动触发组件的重新渲染
+     * 使得我们的修改可以在页面中呈现出来。
+     * 
+     * 
+     * 在函数组件中，我们需要通过钩子函数，获取state
+     * 使用钩子useState来创建state，它需要一个值作为参数，这个值就是state的初始值。
+     * import { useState } from 'react';‘
+     * 返回一个数组，
+     *  数组中的第一个元素是初始值,初始值只是用来显示数据，直接修改不会触发组件的重新渲染。
+     *  数组中的第二个元素是一个函数，通常会命名为setXxx;
+     *  这个函数用来修改state, 调用其修改state后会出发组件重新渲染,并且使用函数中的值作为新的state.
+     *  
+     * 当点击+时，数字增大
+     * 当点击-时，数字减少
      */
-
-    event.preventDefault(); // 取消默认行为
-    event.stopPropagation(); // 取消事件冒泡
-
-    alert(event);
-  };
-
-  return (
-    <div id="root"
-      onClick={()=>{
-        alert("我是div");
-      }}
-     style={{ width: 200, height: 200, margin: "100px auto" }}>
-      我是DIV!!!
-      {/* 
-      在React中事件需要通过元素的属性来设置，与原生JS不同，在React中事件的属性需要使用驼峰命名法 
-        1. onclick -> onClick
-        2. onchange -> onChange
-      属性值不能直接执行代码，而是需要一个回调函数:
-        onclick="alert(1234)"
-        onClick=()=> {
-          alert(1234)}
-      */}
-      <button
-        onClick={() => {
-          alert(1234);
-        }}
-      >
-        哈哈
-      </button>
-      <button onClick={clickHandler}>嘻嘻</button>
-      <a
-        href="https://www.baidu.com"
-        target="_blank"
-        rel="noreferrer"
-        onClick={clickHandler}
-      >
-        超链接
-      </a>
-    </div>
-  );
+    // 创建一个变量来存储数字
+    const result = useState(2);
+    console.log("result->>>", result);
+    // let counter = result[0]; // 数字的初始值
+    // let setCounter = result[1]; // 修改数字的函数
+    const [counter, setCounter] = result; // 数字的初始值, 修改数字的函数
+    const addHandler = () => {
+        // 点击后，数字+1
+        setCounter(counter + 1);
+    };
+    const subHandler = () => {
+        // 点击后，数字-1
+        setCounter(counter - 1);
+    };
+    return <div className={"app"}>
+        <h1>{counter}</h1>
+        <button onClick={addHandler}>+</button>
+        <button onClick={subHandler}>-</button>
+    </div >
 };
-
-/**
- * <button></button>
- *
- */
-
-export default App;
+export default App
