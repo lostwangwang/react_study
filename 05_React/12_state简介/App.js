@@ -24,6 +24,7 @@ const App = () => {
      * 当点击-时，数字减少
      */
     // 创建一个变量来存储数字
+
     const result = useState(2);
     console.log("result->>>", result);
     // let counter = result[0]; // 数字的初始值
